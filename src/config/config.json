@@ -8,6 +8,7 @@
     },
 
     "discord": {
-        "token": "NzU5NDAyMDU3NzE4OTU2MDMz.X28-Rw.tuzAIGjoMtiOnTdmNVLWUVx3qhY"
+        "token": "NzU5NDAyMDU3NzE4OTU2MDMz.X28-Rw.tuzAIGjoMtiOnTdmNVLWUVx3qhY",
+        "prefix": "?"
     }
 }

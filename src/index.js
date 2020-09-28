@@ -15,7 +15,7 @@ const language = JSON.parse(fs.readFileSync("./language/en-US.json"));
 const {Database} = require("./database/Database.js");
 
 // Commands imports (Located to ./action/)
-
+const {Link} = require("./action/utils/Link.js");
 
 // Api Imports (Located to ./api/)
 
@@ -24,6 +24,9 @@ const {Database} = require("./database/Database.js");
 client.on('ready', () => {
     console.log(`[${time(Date.now())}] The client "${client.user.tag} has been connected."`); // check if the client has been logged.
     new Database(config, time).checkConnectionState(); // Return if the client is connected to the database.
+});
+client.on("message", (message) => {
+    new Link(message, config, language, client).selector();
 });
 
 // Login to Discord Api

@@ -1,3 +1,24 @@
 {
-    
+  "link": {
+    "link": {
+      "messageSuccess": [
+        "Your discord account has been successfully linked to your ingame account! You have been renamed by your ingame username."
+      ],
+      "messageError": [
+        "You must specify your in game Id.",
+        "You must specify your in game username.",
+        "Your profile has not been found. retry with correct information.",
+        "Your username is not corresponding to the given id. please retry with correct information.",
+        "The account you specified has been already set to someone."
+      ]
+    },
+    "unlink": {
+      "messageSuccess": [
+        "Your account has been successfully unlink from discord."
+      ],
+      "messageError": [
+        "You haven't link an account yet, you must link one to use the unlink command."
+      ]
+    }
+  }
 }
