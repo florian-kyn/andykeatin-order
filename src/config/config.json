@@ -1,0 +1,13 @@
+{
+    "database": {
+        "username": "discord-client",
+        "database": "master",
+        "password": "discordclient",
+        "host": "localhost",
+        "port": "DATABASE_PORT"
+    },
+
+    "discord": {
+        "token": "NzU5NDAyMDU3NzE4OTU2MDMz.X28-Rw.tuzAIGjoMtiOnTdmNVLWUVx3qhY"
+    }
+}

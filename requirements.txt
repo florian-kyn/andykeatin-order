@@ -1,0 +1,12 @@
+Discord Bot
+
+Linked to game database.
+
+Autotmatically names people as per in game. with their user id [01] etc 
+
+autmatically creates user roles for gangs created in game
+
+adds gang members to that role. if they leave or change gangs it will swap them out.
+
+auto creates 3 channels for each gang that is created - general, market, war room. (only that role can see it)
+
