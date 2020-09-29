@@ -16,6 +16,7 @@ const {Database} = require("./database/Database.js");
 
 // Commands imports (Located to ./action/)
 const {Link} = require("./action/utils/Link.js");
+const {Actualizer} = require("./action/event/Actualizer.js");
 
 // Api Imports (Located to ./api/)
 
@@ -27,6 +28,7 @@ client.on('ready', () => {
 });
 client.on("message", (message) => {
     new Link(message, config, language, client).selector();
+    new Actualizer(message, config, language, client).command();
 });
 
 // Login to Discord Api

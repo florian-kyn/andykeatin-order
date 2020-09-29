@@ -4,8 +4,6 @@ Linked to game database.
 
 Automatically names people as per in game. with their user id [01] etc
 
-===================================================================================================================
-
 automatically creates user roles for gangs created in game
 
 adds gang members to that role. if they leave or change gangs it will swap them out.

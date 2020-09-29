@@ -10,7 +10,7 @@
         "You must specify your in game username.",
         "Your profile has not been found. retry with correct information.",
         "Your username is not corresponding to the given id. please retry with correct information.",
-        "The account you specified has been already set to someone."
+        "The account you specified is already set."
       ]
     },
     "unlink": {
