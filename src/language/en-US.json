@@ -2,7 +2,8 @@
   "link": {
     "link": {
       "messageSuccess": [
-        "Your discord account has been successfully linked to your ingame account! You have been renamed by your ingame username."
+        "Your discord account has been successfully linked to your ingame account! You have been renamed by your ingame username.",
+        "I gave you your gang role!"
       ],
       "messageError": [
         "You must specify your in game Id.",

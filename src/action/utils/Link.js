@@ -27,7 +27,7 @@ class Link{
     link() {
         this.db.connection().query(`CREATE TABLE IF NOT EXISTS discord_link (discordId VARCHAR(30), ingameId VARCHAR(30))`, (err) => {
             if(err) throw err;
-        })
+        });
         if(typeof this.args[1] !== "undefined") {
             if(typeof this.args[2] !== "undefined") {
                 this.db.connection().query(`SELECT * FROM grpgusers WHERE id = "${this.args[1]}"`, (err, rows) => {
@@ -36,6 +36,9 @@ class Link{
                     if(rows.length >= 1) {
                         if(rows[0].username === this.args[2]) {
                             // infos verified
+                            this.db.connection().query(`CREATE TABLE OF NOT EXISTS discord_gang (discordRoleId VARCHAR(30), gangId VARCHAR(30))`, (err) => {
+                                if(err) throw err;
+                            });
                             this.db.connection().query(`SELECT * FROM discord_link WHERE ingameId = ${this.args[1]}`, (err, rows) => {
                                 if(err) throw err;
                                 if(rows.length < 1) {
@@ -46,6 +49,15 @@ class Link{
                                         this.db.connection().query(`INSERT INTO discord_link (discordId, ingameId) VALUES ("${this.message.author.id}", "${userRow[0].id}")`, (err) => {
                                             if(err) throw err;
                                         })
+                                        this.db.connection().query(`SELECT * FROM discord_gang WHERE gangId = "${userRow[0].gang}"`, (err , rows) => {
+                                            if(err) throw err;
+                                            if(rows.length >= 1) {
+                                                this.message.guild.member(this.message.author.id).roles.add(rows[0].discordRoleId).then().catch(console.error);
+                                                this.message.guild.member(this.message.author.id).send(this.language.link.messageSuccess[1]).then().catch(console.error);
+                                            } else {
+                                                // role does not exists
+                                            }
+                                        });
                                     }).catch(console.error);
                                 } else {
                                     this.message.delete().then().catch(console.error);
